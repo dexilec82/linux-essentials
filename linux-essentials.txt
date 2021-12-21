@@ -1,0 +1,141 @@
+#for old old linux versions
+ifconfig
+route
+ip route
+ip link
+route -n
+cat /etc/resolv.conf
+cat /etc/network/interfaces
+
+#new versions
+ip add
+cat /etc/netplan/00-installer-config.yaml
+sudo netplan apply
+
+#use sudo to run commands from root otherwise login as root to prevent from using sudo always
+sudo nano /etc/network interfaces
+sudo service networking restart
+sudo /etc/init.d/networking restart
+sudo shutdown -r now
+ip address
+pwd
+whoami
+cd
+cd / --> change to root directory
+cd --> back to home directory
+cd ..--> back one directory
+~ --> indicates your in home directory
+/ --> indicates your in root directory
+ll
+ls
+ls -la --> list with details
+mkdir --> create directory
+grep --> filter
+cat passwd
+sudo cat passwd | grep carlo
+sudo nano /etc/hosts
+uname
+uname --help
+man touch -- see documentation about a command
+lsb_release -a --> see version of linux or ubuntu
+apt-get install lsb-release --> specify specific file to install
+apt-get update --> update
+apt-get install tree
+tree
+sudo apt install net-tools
+find * | grep gns3
+mv - move 
+rm - remove
+ls -l or ll - list with more information
+su - --> go to root directory
+sudo passwd root --> set password for root directory
+ls --help | more
+ls --help | less
+ls --help | grep color
+chmod --> allows to add permissions to a file
+chmod +x myfile1 --> add execute permission to myfile1
+chmod +r myfile1 --> add read permission to myfile1
+chmod +w myfile1 --> add write permission to myfile1
+
+cp /etc/hosts . -->copy hosts to local directory
+mv hosts123 ./test --> move host123 to test directory
+mv hosts123 newfile1234 --> move host123 to a new file name newfile1234
+rm newfile1234 --> remove newfile1234
+rm -r test --> recursively delete a directory named test
+less /etc/passwd
+more /etc/passwd
+useradd --> add users 
+userdel --> delete users
+usermod --> modify users
+users --> show users
+id (username) --> show info about a user like user id, group id, and groups
+cat /etc/passwd | grep james
+usermod james -s /bin/bash
+sudo passwd james --> change password for user james
+usermod james -s /bin/bash --> modify user james to use bash shell when logging in
+sudo usermod -aG sales james --> append user james into sales group
+grep james /etc/shadow --> show the encrypted password
+passwd -l james --> lock james password no one can login
+passwd -u james --> unlock james password so can login
+chage james --> changing aging password information for james
+
+groupadd
+groupdel
+groupmod
+groups
+
+chmod a-r test --> remove read permissions on file test
+chmod a+r test --> add read permissions on file test
+touch test3 --> create a file named test3
+nano test3 --> also creates a file named test3
+
+chmod o-r test3 --> remove read permission for other users for test3 file
+chmod g-r test3 --> remove read permission for group for test3 file
+chmod u-r test3 --> remove read permission for user for test3 file
+chmod a-r test3 --> remove read permission for all users for test3 file
+chmod o+r test3 --> add read permission for other users for test3 file
+chmod g+r test3 --> add read permission for group for test3 file
+chmod u+r test3 --> add read permission for user for test3 file
+chmod r+r test3 --> add read permission for all users for test3 file
+
+ps --> show processes running
+ps -a
+ps -A
+
+systemctl --> command used to manage daemons
+ps fax --> show parent and child processes
+
+apt-cache search tftpd --> search for tptfd packages in cache
+apt-get install tftpd-hpa
+nano /etc/default/tftpd-hpa
+
+configuring tftp
+apt-cache search tftpd --> search for tftp packages in cache
+sudo apt-get install tftpd-hpa --> install tftp
+sudo nano /etc/default/tftpd-hpa --> check tftp settings and change
+cat /etc/default/tftpd-hpa 
+sudo chown -R tftp /var/lib/tftpboot/ --> change permissions from root to tftp so tftp can write into the directory
+
+###############
+New using YAML
+cat /etc/netplan/00-installer-config.yaml
+sudo netplan apply
+sudo reboot
+ip address
+ip route
+
+Text Editor
+
+vi text editor
+i - insert
+esp key - to escape editor
+:q! --> quit and lose all changes
+:wq! --> write and quit
+G - go to last line
+gg - go to first line
+/ - search
+n - to find the text in the search
+esc u - undoes changes
+dd - delete a line
+
+nano text editor
