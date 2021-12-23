@@ -139,3 +139,29 @@ esc u - undoes changes
 dd - delete a line
 
 nano text editor
+
+
+#####
+
+from Network Programmability and Automation - O'Reilly
+
+vagrant@jessie:~$ --> $ denotes no root privelege
+vagrant@jessie:~# --> # denotes root privelege
+
+cd bin --> moves to bin directory in the home directory
+cd /bin --> moves to bin on another directory most likely the root
+cd .. --> moves up one directory
+cd ../share --> moves up one directory and change to share directory
+cd ../../ --> moves up to root directory 
+cd --> moves up to root directory
+cd - --> switch back to last directory
+touch (filename) --> create an empty file in the current directory
+touch ./(filename) --> create an empty file in the current directory
+touch /(filename) --> create an empty file in the root directory
+
+man cp --> view manual page 
+
+cp (source file) (destination file) --> copying a file or a directory
+mv (source file) (destination file) --> moving a file or a directory
+ 
+
