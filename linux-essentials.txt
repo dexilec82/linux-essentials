@@ -165,3 +165,99 @@ cp (source file) (destination file) --> copying a file or a directory
 mv (source file) (destination file) --> moving a file or a directory
  
 
+permissions octal values
+read (r)- 4
+write (w) - 2
+execute (e) - 1
+
+example
+644 - user permission (read(4)+ write(2)) group permission (4 - read)
+      others permission (4 - read)
+
+examples
+chmod u+rw config.txt
+chmod u+rw,g-w /opt/share/config.txt
+chmod u+rw,g-w /opt/carlo -R
+
+chmod - modify permission
+chown - change owner
+chgrp - change group
+
+file (executable file) --> executes a file. auto detects type of exe file
+auto detection made possible by shebang (!) a shortcut to where the interpreter is located. for example for python the location is /usr/bin/python so the shebang for the script would look like !/usr/bin/python. you can explicitly state the shebang when executing a file without the file command
+
+
+############################
+
+absolute path - specifying the location of a file or directory from the root directory
+relative path -  specifying the location of a file or directory from the current working directory
+
+Every Linux system has a search path, which is a list of directories on the
+system that it will search when the user enters a filename. You can see the current search path by entering echo $PATH at your shell prompt
+
+dexil@DESKTOP-N8DTM9J MINGW64 ~
+$ echo $PATH
+
+--> if you have stored a script that is not in the search patch, to run that script specify that its absolute path or the current working directory by using ./ in the beginning
+[vagrant@centos ~]$ ./shellscript.sh
+
+############################
+
+daemon - in the linux world, it refers to a process running in the background
+init scripts - startup scripts used to start, stop, or restart a daemon
+
+systemd - init system
+systemctl start service-name
+systemctl stop service-name
+systemctl restart service-name
+
+ss -lnt --> show listening tcp sockets
+ss -lnu --> show listening udp sockets
+ps --> show info on the currently running processes
+
+############################
+
+ifconfig --> deprecated
+
+ip addr
+ip addr list
+ip link
+ip link list
+ip link list (interface)
+ip route
+ip route list
+
+
+ip link set ens33 down --> disabling interface
+ip link set ens33 up --> enable interface
+ip addr add 172.31.254.100/24 dev eth1 --> assign an ip
+ip addr del 172.31.254.100/24 dev eth1 --> delete an ip
+ip link add link eth2 eth2.150 type vlan id 150 --> creating vlan interfaces
+ip -d link list eth2.150 --> verify the interface is a vlan interface
+ip route add 192.168.102.0/24 via 192.168.100.3 dev eth 1 --> add route
+ip route del 192.168.102.0/24 via 192.168.100.3 dev eth 1 --> del route
+ip route del default via 192.168.70.2 dev eth0 --> del default gw
+ip route add default via 192.168.70.2 dev eth0 --> add default gw
+ip link add name (bridge-name) type bridge -- create a bridge
+ip link set eth1 master br0 --> add eth1 to the bridge
+bridge link --> shows interfaces that are part of a bridge
+ip link set (interface name) nomaster --> remove an interface from a bridge
+ip link del br0 --> removes a bridge
+
+
+*above changes are not persistent, to make it persistent modify them on configuration files
+*for debian and ubuntu, interface configuration is handled by this file
+/etc/network/interfaces
+
+systemctl restart networking --> for ubuntu
+systemctl restart network --> for centos
+initctl restart network-interface INTERFACE=interface --> for debian
+--> to restart the networking service after changes
+
+
+
+
+
+
+
+
